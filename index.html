@@ -1,0 +1,60 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <title>Login - FTMS</title>    
+
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/angular.min.js"></script>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>-->
+    <!--<script src="/Scripts/modernizr-2.6.2.js"></script>-->
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="js/Main.js"></script>
+    <script src="js/Controllers.js"></script>
+</head>
+<body style="background-color:lightcyan" ng-app="ftms">
+
+    <div class="navbar navbar-inverse navbar-fixed-top ">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/Home">FTMS</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/Home">Home</a></li>
+                    <li><a href="/Home/About">About</a></li>
+                    <li><a href="/Home/Contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <div ng-view></div>
+    </div>
+
+    <div class="footer navbar-fixed-bottom" style="background-color:darkgreen;height:20px">
+        <p align="center">&copy; 2017 - Trizetto Tools</p>
+
+    </div>
+
+
+
+
+
+   
+
+</body>
+</html>
+
