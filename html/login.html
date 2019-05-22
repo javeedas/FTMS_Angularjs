@@ -1,28 +1,25 @@
-﻿
+
 <div>
-    <p>{{msg}}</p>
-<form action="/" method="post" style="margin: 150px auto; width:250px;height:500px">
-    <input name="__RequestVerificationToken" type="hidden" value="Tt0hT6zqdLs81IsXBaJ6_4m0kBomOVl5xVBKp-gHwjNu0sYhn-ZUKEER9y128MlHAbwhRiOALxYFGFxIvL8STpVzNzLILdNrX3Jyq7tJEEA1" />            <div class="Absolute-Center.is-Responsive">
+<form name="loginForm" style="margin: 150px auto;margin-left:350px; width:250px;height:500px" novalidate>
+        <div class="Absolute-Center.is-Responsive">
         <div class="panel panel-primary" style="width:400px">
             <div class="panel-heading">
                 <h3 class="panel-title">SignIn</h3>
             </div>
             <div class="panel-body">
-                <div class="form-group input-group">
+                <div class="form-group input-group" ng-class="{'has-error':loginForm.username.$invalid && !loginForm.username.$pristine }">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input class="form-control col-md-4" data-val="true" data-val-required="username is required" id="username" name="username" placeholder="username" type="text" value="" ng-model="username" />
-                    <span class="field-validation-valid text-danger" data-valmsg-for="username" data-valmsg-replace="true"></span>
+                    <input class="form-control col-md-4"  id="username" name="username" placeholder="username" type="text"  ng-model="uName" required/>              
                 </div>
-
-                <div class="form-group input-group">
+                <p ng-show="loginForm.username.$invalid && !loginForm.username.$pristine" class="text-danger">Username required</p>
+                <div class="form-group input-group" ng-class="{'has-error':loginForm.password.$invalid && !loginForm.password.$pristine }">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input class="form-control col-md-4" data-val="true" data-val-required="password is required" id="password" name="password" placeholder="Password" type="password" ng-model="password"/>
-                    <span class="field-validation-valid text-danger" data-valmsg-for="password" data-valmsg-replace="true"></span>
+                    <input class="form-control col-md-4"  id="password" name="password" placeholder="Password" type="password" ng-model="uPassword" required/>
                 </div>
-
+                <p ng-show="loginForm.password.$invalid && !loginForm.password.$pristine" class="text-danger">Password is required</p>
                 <div class="form-group input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-log-in"></i></span>
-                    <button id="btnSubmit" type="submit" formmethod="post" class="btn btn-def btn-block" style="text-align:center;background-color:lightblue">Login</button>
+                    <button id="btnSubmit" type="submit"  class="btn btn-def btn-block" style="text-align:center;background-color:lightblue" ng-disabled="loginForm.$invalid" ng-click="validateUser()">Login</button>
                 </div>
 
 
@@ -30,5 +27,11 @@
             </div>
         </div>
     </div>
+    
+    <p ng-show="haserror" class="alert-danger">{{errorMessage}}</p>
 </form>
+    
+    
+        
+   
 </div>
